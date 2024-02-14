@@ -33,9 +33,9 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 <h2>Installation Steps</h2>
 
 
-1.) The first thing you are going to want to do is create a virtual machine by going to https://portal.azure.com/. Setup your virtual machine with Windows 10 Pro, version 22H2. Note, you will want to create a virtual machine with atleast 2 vcpus and 16 gbs of memory.
+1.) The first thing you are going to want to do is create a virtual machine by going to https://portal.azure.com/. Set up your virtual machine with Windows 10 Pro, version 22H2. 
 
-2.) Once you have created your virtual machine you will want to conncet to it by using the public ip address the vm is setup with. You will connect using the remote desktop connection app. 
+2.) Once you have created your virtual machine you will want to connect to it by using the public IP address the VM is setup with. You will connect using the remote desktop connection app. 
 </p>
 <br />
 
@@ -48,7 +48,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 </p>
 <p>
   
-3.) Once you have connected to your virtual machine you will want to go to your control panel. From the control panel open up programs. Select, Turn Windows features on and off.
+3.) Once you have connected to your virtual machine you will want to go to your control panel. From the control panel open up programs. Select and turn Windows features on and off.
 
 <p>
 <img src="https://imgur.com/fGXMpx4.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
@@ -60,7 +60,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 </p>
 <p>
   
-4.) You will want to install / enable IIS in Windows with CGI and Common HTTP Features
+4.) You will want to install/enable IIS in Windows with CGI and Common HTTP Features
   - World Wide Web Services -> Application Development Features -> 
 [X] CGI
 [X] Common HTTP Features
@@ -77,9 +77,8 @@ This tutorial outlines the prerequisites and installation of the open-source hel
   
 ***NOTE*** Make sure all Common HTTP Features are checked.
  
- To make sure the IIS is installed / enabled go to a browser of your choice and search for 127.0.0.1 
-  It should look something like this. 
-  
+ To make sure the IIS is installed/enabled go to a browser of your choice and search for 127.0.0.1 
+ 
 <p>
 <img src="https://imgur.com/eICujoq.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
@@ -97,8 +96,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
   
 8.) From the Installation Files, download PHP 7.3.8 (php-7.3.88-nts-Win32-VC15-x866.zip) and unzip the contents into C:\PHP
   
-  !! ATTENTION !!
-If this appears, choose to “Keep” the file:
+  
   
 <p>
 <img src="https://imgur.com/xZv1Yhw.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
@@ -132,7 +130,7 @@ Standard Configuration ->
 </p>
 <p>
   
-11.) Now that we have the files downloaded and installed we will want to search for IIS in the windows search bar. Open IIS as an administrator.
+11.) Now that we have the files downloaded and installed we will want to search for IIS in the Windows search bar. Open IIS as an administrator.
   The program should look like this.
   
 <p>
@@ -148,14 +146,14 @@ Standard Configuration ->
 </p>
 <p>
   
-Register new PHP version.
+Register the new PHP version.
   
 <p>
 <img src="https://imgur.com/qdbn5zQ.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
   
-You will want to provide a path to the php executable file (php-cgi.exe)). 
+You will want to provide a path to the PHP executable file (php-cgi.exe)). 
   Go to C Drive -> PHP -> click on php-cgi file.
   
 <p>
@@ -172,7 +170,7 @@ You will want to provide a path to the php executable file (php-cgi.exe)).
   
 13.) Install osTicket v1.15.8
   -Download osTicket from the Installation Files Folder
-  -Extract and copy "upload" folder to c:\inetpub\wwwroot
+  -Extract and copy the "upload" folder to c:\inetpub\wwwroot
   -Within c:\inetpub\root, Rename "upload" to "osTicket"
   
   Reload IIS again.
@@ -226,7 +224,7 @@ You will want to provide a path to the php executable file (php-cgi.exe)).
   
   We are going to rename the ost-sampleconfig.php to ost-config.php
   
-  Now that we have renamed the files, right click on the file and go to properties.
+  Now that we have renamed the files, right-click on the file and go to properties.
   From there click security, click on advance, and disable the inheritance.
   We will select Remove all inherited permissions from this object.
   
@@ -261,7 +259,7 @@ Select a principal
 </p>
 <p>
   
-  Click Apply and Ok.
+  Click Apply and OK.
   
 <p>
 <img src="https://imgur.com/saRO3y5.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
@@ -269,7 +267,7 @@ Select a principal
 <p>
   
   Once that is done we will continue to setup osTicket in the browser. Click Continue on the osTicket browser page.
-  Fill out the page as required except the Database Settings at the bottom of the page. We will get to that. 
+  Fill out the page as required except for the Database Settings at the bottom of the page. We will get to that. 
   
   We will want to download and install HeidiSQL from the Installation Files. 
   
@@ -278,7 +276,7 @@ Select a principal
 </p>
 <p>
   
-  When the program is open we will create a new session in it.
+  
   
 <p>
 <img src="https://imgur.com/g5M1i61.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
@@ -294,14 +292,14 @@ Select a principal
   
   Once we are connected to the session we will go back to the browser to finish setting everything up. Under the Database Settings in the browser the username will be root and the password will be Password1.
   
-  We will now create a new database within HeidiSQL. In Heidi right click on the left side where is says "Unnamed", select "create new", and then select "database". Name the new database osTicket. Once we have the new database setup go back to the osTicket browser and under MySQL Database type in osTicket.
+  We will now create a new database within HeidiSQL. In Heidi, right-click on the left side where it says "Unnamed", select "Create new", and then select "Database". Name the new database osTicket. Once we have the new database setup go back to the osTicket browser and under MySQL Database type in osTicket.
   
 <p>
 <img src="https://imgur.com/0rG1AJm.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
   
-  The last step is to do some clean up. We will want to delete the setup folder in our system. 
+  The last step is to do some cleanup. We will want to delete the setup folder in our system. 
   -Delete: C:\inetpub\wwwroot\osTicket\setup
   Only delete the setup folder and nothing else.
   
@@ -317,7 +315,7 @@ Select a principal
 </p>
 <p>
   
-  The last step after that is to login to osTicket on the browser.
+  The last step after that is to log in to osTicket on the browser.
   
 <p>
 <img src="https://imgur.com/uHVdDsx.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
